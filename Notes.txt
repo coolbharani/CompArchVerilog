@@ -1,0 +1,18 @@
+Three stages of Verilog Design
+1. Gate level
+2. Data flow
+3. Behavioral Design
+
+Symbol	|	Operation
+----------------------
+  +		| Binary Addition
+  -		| Binary Subtraction
+  &		| Bitwise AND
+  |		| Bitwise OR
+  ^		| Bitwise XOR
+  ~		| Bitwise NOT
+  ==	| Equality
+  >		| Greater than
+  <		| Lesser than
+  { }	| Concatenation
+  ? :	| Conditional
