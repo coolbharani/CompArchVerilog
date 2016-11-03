@@ -1,4 +1,4 @@
-module test_CircuitSix;
+module test_CircuitSeven;
 wire Y;
 reg x,y,z;
 
