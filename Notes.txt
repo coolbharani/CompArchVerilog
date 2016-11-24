@@ -5,14 +5,50 @@ Three stages of Verilog Design
 
 Symbol	|	Operation
 ----------------------
-  +		| Binary Addition
-  -		| Binary Subtraction
-  &		| Bitwise AND
-  |		| Bitwise OR
-  ^		| Bitwise XOR
-  ~		| Bitwise NOT
-  ==	| Equality
-  >		| Greater than
-  <		| Lesser than
-  { }	| Concatenation
-  ? :	| Conditional
+  +		  | Binary Addition
+  -		  | Binary Subtraction
+  &		  | Bitwise AND
+  |		  | Bitwise OR
+  ^		  | Bitwise XOR
+  ~		  | Bitwise NOT
+  ==	  | Equality
+  >		  | Greater than
+  <		  | Lesser than
+  { }	  | Concatenation
+  ? :	  | Conditional
+
+
+  Behavioral Modeling: 2 types of abstract behavior
+
+
+  B = A
+  C = B + 1 // C <- A + 1
+  //Sequential execution ^
+
+  -------------------------
+  B <= A
+  C <= B + 1
+  //Non Blocking execution ^
+
+  always @(A or B or C)
+     "   @(posedge clk)
+
+D F/F
+   D  | Q(t+1)
+ -------------  
+   0  |    0
+   1  |    1
+
+T F/F
+   T  | Q(t+1)
+ -------------  
+   0  |    Q(t)  No change
+   1  |    Q'(t) Toggle/complement
+
+JK F/F
+   J   K  | Q(t+1)
+ ------------------  
+   0   0  |   Q(t)  No change
+   1   1  |    0    Reset
+   1   0  |    1    Set
+   1   1  |   Q'(t) Complement 
